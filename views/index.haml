@@ -1,13 +1,13 @@
 !!! 5
 %head
-  %title 姓名判断
+  %title 姓名判断横断検索
   %meta{charset: "UTF-8"}
   %meta{name: "viewport", content: "initial-scale=1.0, user-scalable=no, width=device-width"}
   %link{href: "css/bootstrap.min.css", rel: "stylesheet"}
 %body
   .container
     .hero-unit
-      %h1 姓名判断
+      %h1 姓名判断横断検索
       %hr
       %form.form-horizontal{action: '#'}
         .control-group
@@ -20,14 +20,36 @@
             %input{type: 'text', id: 'first-name', placeholder: '名'}
         .control-group
           .controls
-            %button{type: 'submit', class: 'btn'} 検索
+            %label.radio.inline
+              %input{type: 'radio', id: 'sex-m', name: 'sex', checked: 'checked'}
+              男
+            %label.radio.inline
+              %input{type: 'radio', id: 'sex-f', name: 'sex'}              
+              女
+        .control-group
+          .controls
+            %input{type: 'button', class: 'btn', id: 'search', value: '検索'} 
     .row
       .span4
-        %p aaaa
+        %h3
+          %a{href: 'http://www.keishinsya.jp/okina/index.shtml'} 山本式
+        %table.table.table-striped{id: 'yamamoto-result'}
+          %thead
+          %tbody  
       .span4
-        %p aaaa
+        %h3
+          %a{href: 'http://seimei.linkstudio.biz'} seimei.linkstudio.biz
+        %table.table.table-striped{id: 'seimei-result'}
+          %thead
+          %tbody  
       .span4
-        %p aaaa
+        %h3
+          %a{href: 'http://akachan-meimei.com/'} 赤ちゃんの名づけ命名
+        %table.table.table-striped{id: 'akachan-result'}
+          %thead
+          %tbody  
+
 
   %script{src: "http://code.jquery.com/jquery-1.8.1.min.js"}
   %script{src: "js/bootstrap.min.js"}
+  %script{src: "js/main.js"}
