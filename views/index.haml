@@ -3,54 +3,66 @@
   %title 姓名判断横断検索
   %meta{charset: "UTF-8"}
   %meta{name: "viewport", content: "initial-scale=1.0, user-scalable=no, width=device-width"}
+  %meta{name: "keywords", content: "姓名判断,横断検索"}
+  %meta{name: "description", content: "複数の姓名判断サイトの横断検索ができるサイトです"}
   %script{src: "js/tracking.js"}
   %link{href: "css/bootstrap.min.css", rel: "stylesheet"}
+  %link{href: "css/main.css", rel: "stylesheet"}
 %body
-  .container
-    .hero-unit
-      %h1 姓名判断横断検索
-      %hr
-      %form.form-horizontal{action: '#'}
-        .control-group
-          %label.control-label{for: 'last-name'} 姓
-          .controls
-            %input{type: 'text', id: 'last-name', placeholder: '姓'}
-        .control-group
-          %label.control-label{for: 'first-name'} 名
-          .controls
-            %input{type: 'text', id: 'first-name', placeholder: '名'}
-        .control-group
-          .controls
-            %label.radio.inline
-              %input{type: 'radio', id: 'sex-m', name: 'sex', checked: 'checked'}
-              男
-            %label.radio.inline
-              %input{type: 'radio', id: 'sex-f', name: 'sex'}              
-              女
-        .control-group
-          .controls
-            %input{type: 'button', class: 'btn btn-primary', id: 'search', value: '検索'} 
-    .row
-      .span4
-        %h3
-          %a{href: 'http://www.keishinsya.jp/okina/index.shtml'} 山本式
-        %table.table.table-striped{id: 'yamamoto-result'}
-          %thead
-          %tbody  
-      .span4
-        %h3
-          %a{href: 'http://seimei.linkstudio.biz'} seimei.linkstudio.biz
-        %table.table.table-striped{id: 'seimei-result'}
-          %thead
-          %tbody  
-      .span4
-        %h3
-          %a{href: 'http://akachan-meimei.com/'} 赤ちゃんの名づけ命名
-        %table.table.table-striped{id: 'akachan-result'}
-          %thead
-          %tbody  
+  #wrap
+    .container
+      .hero-unit
+        %h1 姓名判断横断検索
+        %hr
+        %form.form-horizontal{action: '#'}
+          .control-group
+            %label.control-label{for: 'last-name'} 姓
+            .controls
+              %input{type: 'text', id: 'last-name', placeholder: '姓'}
+          .control-group
+            %label.control-label{for: 'first-name'} 名
+            .controls
+              %input{type: 'text', id: 'first-name', placeholder: '名'}
+          .control-group
+            .controls
+              %label.radio.inline
+                %input{type: 'radio', id: 'sex-m', name: 'sex', checked: 'checked'}
+                男
+              %label.radio.inline
+                %input{type: 'radio', id: 'sex-f', name: 'sex'}              
+                女
+          .control-group
+            .controls
+              %input{type: 'button', class: 'btn btn-primary', id: 'search', value: '検索'} 
+        %a(href="https://twitter.com/share" class="twitter-share-button" data-via="backflip1801" data-lang="ja") ツイート
+      .row
+        .span4
+          %h3
+            %a{href: 'http://www.keishinsya.jp/okina/index.shtml'} 山本式
+          %table.table.table-striped{id: 'yamamoto-result'}
+            %thead
+            %tbody  
+        .span4
+          %h3
+            %a{href: 'http://seimei.linkstudio.biz'} seimei.linkstudio.biz
+          %table.table.table-striped{id: 'seimei-result'}
+            %thead
+            %tbody  
+        .span4
+          %h3
+            %a{href: 'http://akachan-meimei.com/'} 赤ちゃんの名づけ命名
+          %table.table.table-striped{id: 'akachan-result'}
+            %thead
+            %tbody  
 
+  #footer
+    .container
+      %p.muted.credit
+        &copy; 2013
+        %a(href="http://backflip180.jp") Backflip180
 
   %script{src: "http://code.jquery.com/jquery-1.8.1.min.js"}
   %script{src: "js/bootstrap.min.js"}
   %script{src: "js/main.js"}
+  :javascript
+    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
